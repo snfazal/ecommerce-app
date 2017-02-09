@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/snfazal/ecommerce-app#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.16.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
