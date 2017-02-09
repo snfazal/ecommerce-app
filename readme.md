@@ -41,3 +41,7 @@
 # Wireframes
 
 [Homepage](https://wireframe.cc/pro/pp/f063f370365314)
+
+[Product Index](https://wireframe.cc/pro/pp/8d5508bbe65316)
+
+[Seller Page](https://wireframe.cc/pro/pp/f063f370365314)
