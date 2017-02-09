@@ -24,8 +24,13 @@
   - email
   - password_digest (how do we hide this?)
   - account type (seller, user)
-  - favorited items
-  - items in cart 
+  - favorited items [
+      name of item - clickable link
+    ]
+  - items in cart [{
+      name of item - clickable link
+      quantity in cart
+    }]
   - payment option (how do we hide this?)
   - shipping info 
 
