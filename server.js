@@ -43,7 +43,7 @@ app.use(session({
 
 //SET ROUTES TO HIT CONTROLLERS
 app.use('/users', usersController);
-app.use('/users/:id/products', productsController)
+app.use('/products', productsController)
 app.use('/sessions', sessionsController)
 
 //CONNECT SERVER TO WORLD!
