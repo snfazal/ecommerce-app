@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 // var User = require('../models/user.js');
-// var Product = require('../models/product.js')
+// var authHelpers = require('../helpers/auth.js');
 
 router.get('/', function(req, res){
-  console.log('hit products controller!')
+  console.log('hit session controller!')
 })
 
 
