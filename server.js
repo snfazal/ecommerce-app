@@ -5,6 +5,11 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+//REQUIRE CONTROLLERS
+var usersController = require('./controllers/users.js');
+var sessionsController = require('./controllers/sessions.js');
+var productsController = require('./controllers/products.js')
+
 //LOADS EXTRA ENVIRONMENT VARIABLES FROM LOCAL .env FILE
 require('dotenv').config()
 
@@ -36,11 +41,10 @@ app.use(session({
   cookie: { secure: 60000 }
 }))
 
-console.log(process.env)
-
-
 //SET ROUTES TO HIT CONTROLLERS
-// eg - app.use('/users', usersController);
+app.use('/users', usersController);
+app.use('/users/:id/products', productsController)
+app.use('/sessions', sessionsController)
 
 //CONNECT SERVER TO WORLD!
 app.listen(process.env.PORT || 4000, function(){
