@@ -11,7 +11,7 @@ function GiphyRouter($stateProvider, $urlRouterProvider){
     templateUrl: '/partials/home.html'
   })
   .state('signup', {
-    url: '/login',
+    url: '/signup',
     templateUrl: '/partials/signup.html'
   })
 
