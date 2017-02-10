@@ -1,18 +1,19 @@
-angular.module('listAngularApp', ['ui.router'])
-  .config(GiphyRouter);
 
-function GiphyRouter($stateProvider, $urlRouterProvider){
+angular.module('ecommerce-app', ['ui.router'])
+  .config(StoreRouter);
+
+function StoreRouter($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
   .state('index', {
-    url: '/',
-    templateUrl: '/partials/home.html'
+    url: '/'
   })
   .state('signup', {
-    url: '/signup',
-    templateUrl: '/partials/signup.html'
+    url: '/users/signup',
+    templateUrl: '/partials/users/signup.html'
+
   })
 
 }
