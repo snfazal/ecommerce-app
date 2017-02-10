@@ -2,7 +2,7 @@
 angular.module('ecommerce-app')
   .controller('HomeController', HomeController)
   .controller('UsersController', UsersController)
-  .controller('ProductsController', )
+  .controller('ProductsController', ProductsController)
 
 
 function HomeController($scope, $http) {
@@ -30,8 +30,8 @@ function UsersController($http, $state, $scope, $rootScope){
     console.log(currentUser)
     $http.get(`/users/${currentUser._id}`, {currentUser: currentUser})
       .then(function(response){
-        console.log(response)
-        $state.go('profile', {userId: currentUser._id});
+      console.log(response)
+      $state.go('profile', {userId: currentUser._id});
       })
   }
 
@@ -52,7 +52,20 @@ function UsersController($http, $state, $scope, $rootScope){
 
 
 function ProductsController($scope, $http, $state, $rootScope){
-    var list = this;
+    var product = this;
 
+    products.showProduct = showProduct;
+    products.productsCreated = [];
 
+    //on click will take user to specific product page
+    function showProduct(productId){
+      $http
+      .get('/products/' + productId)
+      .then(function(response){
+        console.log(response);
+        console.log('hit rouuute');
+        console.log(response.data.product.products)
+        // if(response.data.status === 401){return}
+      })
+    }
 }
