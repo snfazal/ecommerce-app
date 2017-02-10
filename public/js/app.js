@@ -21,10 +21,23 @@ angular.module('myApp');
       var self = this;
 
     function signup(userPass) {
-      $http.get('/users', userPass)
+      $http.post('/users', userPass)
       .then(function(response){
-        $state.go('login');
+        $state.go('signup');
       });
     }
 
+    function signup(userPass){
+      $https
+      .get('/users')
+      .then(function(response){
+        console.log(response);
+        console.log(response.data.users);
+        self.allUsers = response.data.users
+      });
+    }
+
+    // getAllUsers();
+
+    this.signup = signup;
     }
