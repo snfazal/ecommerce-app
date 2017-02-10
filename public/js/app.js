@@ -21,7 +21,7 @@ angular.module('myApp');
       var self = this;
 
     function signup(userPass) {
-      $http.post('/users', userPass)
+      $http.get('/users', userPass)
       .then(function(response){
         $state.go('login');
       });
