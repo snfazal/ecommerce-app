@@ -1,6 +1,6 @@
 // console.log('js connected')
-// //sourced from angular_bucket_list_solution
-//
+//sourced from angular_bucket_list_solution
+// 
 // angular.module('myApp')
 //   .controller('MainController', MainController)
 //   .controller('AuthController', AuthConroller)
