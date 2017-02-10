@@ -4,7 +4,7 @@ var User = require('../models/user.js');
 var Product = require('../models/product.js')
 
 router.get('/', function(req, res){
-  console.log('hit carts controller!')
+  console.log('hit feedback controller!')
 })
 
 
