@@ -1,0 +1,6 @@
+<h1>HOME PAGE</h1>
+
+<!-- lists all products and let's you click on them -->
+<ul>
+  <li ng-repeat="product in products.allProducts" ng-click="list.showProducts(product._id)">{{product.name}}</li>
+</ul>
