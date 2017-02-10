@@ -8,6 +8,7 @@ function HomeController($scope, $http) {
 
   $scope.$on('userLoggedIn', function(event, data){
     self.currentUser = data;
+    console.log(`${self.currentUser.username} logged in!`)
   });
 }
 
@@ -17,10 +18,21 @@ function UsersController($http, $state, $scope, $rootScope){
   function signup(userPass){
     $http.post('/users', userPass)
       .then(function(response){
-        console.log(response)
+        console.log(response.data.currentUser);
+        $scope.$emit('userLoggedIn', response.data.currentUser);
         $state.go('index')
-        // $scope.$emit('userLoggedIn', response.data.data);
       })
   }
+
+  function profile(currentUser) {
+    console.log(currentUser)
+    $http.get(`/users/${currentUser._id}`, {currentUser: currentUser})
+      .then(function(response){
+        console.log(response)
+        $state.go('profile', {userId: currentUser._id});
+      })
+  }
+
   self.signup = signup;
+  self.profile = profile;
 }
