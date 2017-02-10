@@ -13,12 +13,14 @@
     <h1>Homepage!</h1>
     <p>css connected!</p>
 
+    <!-- INSIDE OF THIS DIV IS FOR TESTING PURPOSE ONLY -->
     <div ng-controller="UsersController as users">
 
       <li ui-sref="signup">signup</li>
       <li ui-sref="login">login</li>
       <button ng-click="users.profile(home.currentUser)">profile</button>
-      
+      <button ng-click="users.logout()">logout</button>
+
     </div>
 
     <ui-view>
