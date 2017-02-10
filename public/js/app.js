@@ -1,4 +1,4 @@
-// console.log('js connected')
+console.log('js connected')
 //
 // var app = angular.module("myApp", []);
 //
