@@ -1,9 +1,17 @@
-<h1>login homie</h1>
 
-
-
-
-
+<div>
+  <form ng-submit="users.login(userPass)">
+    <div>
+      <label for="email">email</label>
+      <input type="text" ng-model="userPass.email">
+    </div>
+    <div>
+      <label for="password">password</label>
+      <input type="password" ng-model="userPass.password">
+    </div>
+    <button type="submit">login</button>
+  </form>
+</div>
 
 
 
