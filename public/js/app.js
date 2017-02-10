@@ -78,7 +78,8 @@ function ProductsController($scope, $http, $state, $rootScope){
         console.log(response);
         console.log('hit rouuute');
         console.log(response.data.product.products)
-        // if(response.data.status === 401){return}
-      })
+        if(response.data.status === 401){return}
+        $state.go('products', {productId: productId});
+      });
     }
 }
