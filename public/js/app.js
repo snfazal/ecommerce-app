@@ -2,6 +2,8 @@
 angular.module('ecommerce-app')
   .controller('HomeController', HomeController)
   .controller('UsersController', UsersController)
+  .controller('ProductsController', )
+
 
 function HomeController($scope, $http) {
   var self = this;
@@ -33,6 +35,24 @@ function UsersController($http, $state, $scope, $rootScope){
       })
   }
 
+
+  function login(userPass){
+    $http.post('/users', userPass)
+    .then(function(response){
+      console.log(response)
+      console.log('heyyyyy')
+      $state.go('index')
+    })
+  }
+
   self.signup = signup;
+  self.login = login;
   self.profile = profile;
+}
+
+
+function ProductsController($scope, $http, $state, $rootScope){
+    var list = this;
+
+
 }
