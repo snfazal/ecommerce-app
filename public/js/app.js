@@ -29,8 +29,8 @@ function UsersController($http, $state, $scope, $rootScope){
     $http.post('/users', userPass)
     .then(function(response){
       console.log(response)
-      
-      $state.go('index')
+      console.log('heyyyyy')
+      $state.go('login')
     })
   }
   self.signup = signup;
