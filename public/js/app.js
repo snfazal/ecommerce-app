@@ -2,7 +2,7 @@
 angular.module('ecommerce-app')
   .controller('HomeController', HomeController)
   .controller('UsersController', UsersController)
-  .controller('ProductsController', )
+  .controller('ProductsController', ProductsController)
 
 
 function HomeController($scope, $http) {
@@ -12,6 +12,10 @@ function HomeController($scope, $http) {
     self.currentUser = data;
     console.log(`${self.currentUser.username} logged in!`)
   });
+
+  $scope.$on('userLoggedOut', function(event){
+    console.log('User logged out!')
+  })
 }
 
 function UsersController($http, $state, $scope, $rootScope){
@@ -35,16 +39,25 @@ function UsersController($http, $state, $scope, $rootScope){
       })
   }
 
-
   function login(userPass){
-    $http.post('/users', userPass)
+    $http.post('/sessions/login', userPass)
     .then(function(response){
       console.log(response)
-      console.log('heyyyyy')
       $state.go('index')
+      $scope.$emit('userLoggedIn', response.data.currentUser);
     })
   }
 
+  function logout() {
+    $http.delete('/sessions')
+      .then(function(response) {
+        $scope.$emit('userLoggedOut');
+        $state.go('index');
+     });
+  }
+
+
+  self.logout = logout;
   self.signup = signup;
   self.login = login;
   self.profile = profile;
