@@ -30,9 +30,15 @@ function UsersController($http, $state, $scope, $rootScope){
     .then(function(response){
       console.log(response)
       console.log('heyyyyy')
-      $state.go('login')
+      $state.go('index')
     })
   }
+  
   self.signup = signup;
   self.login = login;
+}
+
+function ProductsController($scope, $http, $state, $rootScope){
+    var list = this;
+
 }
