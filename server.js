@@ -8,7 +8,9 @@ var session = require('express-session');
 //REQUIRE CONTROLLERS
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
-var productsController = require('./controllers/products.js')
+var productsController = require('./controllers/products.js');
+var cartsController = require('./controllers/carts.js')
+var feedbackController = require('./controllers/feedback.js')
 
 //LOADS EXTRA ENVIRONMENT VARIABLES FROM LOCAL .env FILE
 require('dotenv').config()
@@ -46,6 +48,8 @@ app.use(session({
 app.use('/users', usersController);
 app.use('/products', productsController)
 app.use('/sessions', sessionsController)
+app.use('/users/:userId/carts', cartsController)
+app.use('/products/:productId/feedback', feedbackController)
 
 //CONNECT SERVER TO WORLD!
 app.listen(process.env.PORT || 4000, function(){

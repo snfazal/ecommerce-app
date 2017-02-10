@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router({mergeParams: true});
 var authHelpers = require('../helpers/auth.js');
 var User = require('../models/user.js');
-// var Product = require('../models/product.js')
+var Product = require('../models/product.js')
 
 //CREATE A NEW USER ROUTE - uses bcrypt inside of auth helper middleware to scramble password and then saves new user with email, username and scrambled password
 router.post('/', authHelpers.createSecure, function(req, res){
