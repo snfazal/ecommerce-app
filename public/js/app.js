@@ -29,7 +29,7 @@ function UsersController($http, $state, $scope, $rootScope){
     $http.post('/users', userPass)
     .then(function(response){
       console.log(response)
-      console.log('heyyyyy')
+      
       $state.go('index')
     })
   }
