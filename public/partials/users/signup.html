@@ -1,17 +1,17 @@
-<div>
-  <form ng-submit="auth.signup(userPass)">
+<div ng-controller="UsersController as users">
+  <form ng-submit="users.signup(userPass)">
     <div>
-      <label for="name">name</label>
-      <input type="text" ng-model="userPass.name">
+      <label for="username">Username</label>
+      <input type="text" ng-model="userPass.username">
     </div>
     <div>
-      <label for="email">email</label>
+      <label for="email">Email</label>
       <input type="text" ng-model="userPass.email">
     </div>
     <div>
-      <label for="password">password</label>
+      <label for="password">Password</label>
       <input type="text" ng-model="userPass.password">
     </div>
-    <button type="submit">signup</button>
+    <button type="submit">Signup!</button>
   </form>
 </div>
