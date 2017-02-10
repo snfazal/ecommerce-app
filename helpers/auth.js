@@ -16,7 +16,7 @@ function loginUser(req, res, next) {
   User.findOne({ email: email })
   .then(function(foundUser){
     if (foundUser == null) {
-      res.json({status: 401, data: "unauthorized"})
+      res.json({status: 401, data: "Unauthorized, log in first"})
 
     } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
       console.log('foundUser', foundUser)
@@ -30,6 +30,8 @@ function loginUser(req, res, next) {
 }
 
 function authorize(req, res, next) {
+  console.log('authorize helper about to check user: ')
+  console.log(req.session.current)
   var currentUser = req.session.currentUser
   if (!currentUser || currentUser._id !== req.params.id ) {
     res.send({status: 401})

@@ -18,5 +18,9 @@ function StoreRouter($stateProvider, $urlRouterProvider){
     url: '/users/login',
     templateUrl: '/partials/users/login.html'
   })
+  .state('profile', {
+    url:'/users/:userId',
+    templateUrl: '/partials/users/profile.html'
+  })
 
 }

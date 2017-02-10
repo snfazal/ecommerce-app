@@ -9,12 +9,17 @@
     <script src="./js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/styles.css">
   </head>
-  <body>
+  <body ng-controller="HomeController as home">
     <h1>Homepage!</h1>
     <p>css connected!</p>
 
-    <li ui-sref="signup">signup</li>
-    <li ui-sref="login">login</li>
+    <div ng-controller="UsersController as users">
+
+      <li ui-sref="signup">signup</li>
+      <li ui-sref="login">login</li>
+      <button ng-click="users.profile(home.currentUser)">profile</button>
+      
+    </div>
 
     <ui-view>
     </ui-view>
