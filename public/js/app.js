@@ -18,6 +18,7 @@ function UsersController($http, $state, $scope, $rootScope){
   function signup(userPass){
     $http.post('/users', userPass)
       .then(function(response){
+        console.log(response.data.currentUser);
         $scope.$emit('userLoggedIn', response.data.currentUser);
         $state.go('index')
       })

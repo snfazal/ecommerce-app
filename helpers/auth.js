@@ -30,8 +30,9 @@ function loginUser(req, res, next) {
 }
 
 function authorize(req, res, next) {
-  console.log(req.params, req.body)
-  var currentUser = req.currentUser
+  console.log('authorize helper about to check user: ')
+  console.log(req.session.current)
+  var currentUser = req.session.currentUser
   if (!currentUser || currentUser._id !== req.params.id ) {
     res.send({status: 401})
   } else {
