@@ -1,3 +1,4 @@
+
 angular.module('ecommerce-app')
   .controller('HomeController', HomeController)
   .controller('UsersController', UsersController)
@@ -21,4 +22,5 @@ function UsersController($http, $state, $scope, $rootScope){
         // $scope.$emit('userLoggedIn', response.data.data);
       })
   }
+  self.signup = signup;
 }

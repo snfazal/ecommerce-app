@@ -1,3 +1,4 @@
+
 angular.module('ecommerce-app', ['ui.router'])
   .config(StoreRouter);
 
@@ -12,6 +13,7 @@ function StoreRouter($stateProvider, $urlRouterProvider){
   .state('signup', {
     url: '/users/signup',
     templateUrl: '/partials/users/signup.html'
+
   })
 
 }
