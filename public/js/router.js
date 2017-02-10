@@ -13,7 +13,10 @@ function StoreRouter($stateProvider, $urlRouterProvider){
   .state('signup', {
     url: '/users/signup',
     templateUrl: '/partials/users/signup.html'
-
+  })
+  .state('login', {
+    url: '/users/login',
+    templateUrl: '/partials/users/login.html'
   })
 
 }
