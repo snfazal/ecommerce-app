@@ -1,4 +1,5 @@
 console.log('js connected')
+//sourced from angular_bucket_list_solution
 
 angular.module('myApp');
 
