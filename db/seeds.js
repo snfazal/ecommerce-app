@@ -31,9 +31,21 @@ var products = [{
     },
     {
         name: 'T-Shirt',
-        img: 'http://static3.businessinsider.com/image/574352c952bcd0210c8c48ae-1500-1125/eat-sleep-code-tshirt.jpg',
+        img: 'https://files.slack.com/files-pri/T0351JZQ0-F444BMYN6/mcga3827-black-at.jpg',
         price: 10,
         quantity: 10
+    },
+    {
+      name: 'Chia Pet',
+      img: 'https://files.slack.com/files-tmb/T0351JZQ0-F446ZU51B-35e53f7d4d/pasted_image_at_2017_02_10_04_05_pm_360.png',
+      price: 15,
+      quantity: 2
+    },
+    {
+      name: 'Candle',
+      img: 'https://files.slack.com/files-tmb/T0351JZQ0-F44QDKLS2-3e9f735c49/il_570xn.1039253913_6i2k_480.jpg',
+      price: 5,
+      quantity: 10
     }
 ];
 
