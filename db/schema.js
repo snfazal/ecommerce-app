@@ -17,20 +17,20 @@ var ProductSchema = new Schema({
   feedback: [FeedbackSchema]
 })
 
-var CartSchema = new Schema ({
-  products: [{
-    product: ProductSchema,
-    quantityInCart: Number
-  }]
-})
 
 var UserSchema = new Schema({
   username: String,
   email: String,
   password_digest: String,
   favorited_products: [ProductSchema],
-  cart: CartSchema,
-  previous_purchases: [CartSchema],
+  cart: [{
+    product: ProductSchema,
+    quantity: Number
+  }],
+  previous_purchases: [{
+    product: ProductSchema,
+    quantity: Number
+  }],
   created_at: Date,
   updated_at: Date
 });
@@ -44,13 +44,11 @@ UserSchema.pre('save', function(next) {
 });
 
 var UserModel = mongoose.model('User', UserSchema);
-var CartModel = mongoose.model('Cart', CartSchema);
 var ProductModel = mongoose.model('Product', ProductSchema);
 var FeedbackModel = mongoose.model('Feedback', FeedbackSchema);
 
 module.exports = {
   User: UserModel,
-  Cart: CartModel,
   Product: ProductModel,
   Feedback: FeedbackModel
 }

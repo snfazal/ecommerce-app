@@ -67,5 +67,11 @@ function UsersController($http, $state, $scope, $rootScope){
 function ProductsController($scope, $http, $state, $rootScope){
     var list = this;
 
+  function addToCart(product, currentUser){
+    $http.post(`/users/${currentUser._id}/carts/${product._id}/add`, {userId: currentUser._id, quantity: 2})
+    .then(function(response){
+      console.log(response)
+    })
+  }
 
 }
