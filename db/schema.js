@@ -10,10 +10,10 @@ var FeedbackSchema = new Schema({
 
 var ProductSchema = new Schema({
   name: String,
-  photo_url: String,
+  img: String,
   categories: [String],
   price: Number,
-  quantityInStock: Number,
+  quantity: Number,
   feedback: [FeedbackSchema]
 })
 
