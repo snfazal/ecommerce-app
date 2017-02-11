@@ -65,19 +65,19 @@ function UsersController($http, $state, $scope, $rootScope){
 
 
 function ProductsController($scope, $http, $state, $rootScope){
-    var product = this;
+    var self = this;
 
-    product.showProduct = showProduct;
-    product.productsCreated = [];
+    self.showProducts = showProducts;
+    self.productsCreated = [];
 
     //on click will take user to specific product page
-    function showProduct(){
+    function showProducts(){
       $http
       .get('/products/')
       .then(function(response){
         console.log(response);
         console.log('hit rouuute');
-        console.log(response.data.product.products)
+        self.allProducts = response.data.products
         // if(response.data.status === 401){return}
         $state.go('index');
       });

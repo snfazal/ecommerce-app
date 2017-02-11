@@ -4,7 +4,15 @@
 
   <!-- lists all products and let's you click on them -->
   <ul>
-    <li ng-repeat="product in products.allProducts" ng-click="products.showProducts(product._id)">{{product.name}}</li>
+    <li ng-repeat="product in products.allProducts">{{product.name}}
+
+    <img ng-src={{product.img}}>
+    </li>
+
   </ul>
+
+  <div ng-click="products.showProducts()">click this</div>
+
+
 
 </div>
