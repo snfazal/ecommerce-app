@@ -67,19 +67,19 @@ function UsersController($http, $state, $scope, $rootScope){
 function ProductsController($scope, $http, $state, $rootScope){
     var product = this;
 
-    products.showProduct = showProduct;
-    products.productsCreated = [];
+    product.showProduct = showProduct;
+    product.productsCreated = [];
 
     //on click will take user to specific product page
-    function showProduct(productId){
+    function showProduct(){
       $http
-      .get('/products/' + productId)
+      .get('/products/')
       .then(function(response){
         console.log(response);
         console.log('hit rouuute');
         console.log(response.data.product.products)
-        if(response.data.status === 401){return}
-        $state.go('products', {productId: productId});
+        // if(response.data.status === 401){return}
+        $state.go('index');
       });
     }
 }
