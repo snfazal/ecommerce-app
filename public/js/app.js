@@ -32,7 +32,7 @@ function UsersController($http, $state, $scope, $rootScope){
 
   function profile(currentUser) {
     console.log(currentUser)
-    $http.get(`/users/${currentUser._id}`, {currentUser: currentUser})
+    $http.get(`/users/${currentUser._id}`)
       .then(function(response){
       console.log(response)
       $state.go('profile', {userId: currentUser._id});
