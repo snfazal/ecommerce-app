@@ -73,8 +73,8 @@ function ProductsController($scope, $http, $state, $rootScope){
     var self = this;
 
 
-    self.showProducts = showProducts;
-    self.productsCreated = [];
+    // self.showProducts = showProducts;
+    // self.productsCreated = [];
 
     //on click will take user to specific product page
   function showProducts(){
@@ -102,7 +102,7 @@ function ProductsController($scope, $http, $state, $rootScope){
     $state.go('cart', {userId: currentUser._id})
   }
 
-  
+
   self.addToCart = addToCart;
   self.showCart = showCart;
 
