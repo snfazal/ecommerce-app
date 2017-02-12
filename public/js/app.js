@@ -77,19 +77,19 @@ function ProductsController($scope, $http, $state, $rootScope){
     self.productsCreated = [];
 
     //on click will take user to specific product page
-    function showProducts(){
-      $http
-      .get('/products/')
-      .then(function(response){
-        console.log(response);
-        console.log('hit rouuute');
-        self.allProducts = response.data.products
-        // if(response.data.status === 401){return}
-        $state.go('index');
-      });
-    }
+  function showProducts(){
+    $http
+    .get('/products/')
+    .then(function(response){
+      console.log(response);
+      console.log('hit rouuute');
+      self.allProducts = response.data.products
+      // if(response.data.status === 401){return}
+      $state.go('index');
+    });
+  }
 
-
+    //will add currenUser's selected product to cart
   function addToCart(product, currentUser){
     $http.post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
     .then(function(response){
@@ -97,11 +97,13 @@ function ProductsController($scope, $http, $state, $rootScope){
     })
   }
 
+  //shows currentUser's product inside cart function
   function showCart(currentUser){
     $state.go('cart', {userId: currentUser._id})
   }
 
+  
   self.addToCart = addToCart;
   self.showCart = showCart;
->>>>>>> 8ad1188080dd9670dc41fdf1399f33e24c696b9b
+
 }
