@@ -82,4 +82,6 @@ function ProductsController($scope, $http, $state, $rootScope){
         $state.go('index');
       });
     }
+
+    function
 }
