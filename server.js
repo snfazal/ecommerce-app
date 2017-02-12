@@ -48,7 +48,7 @@ app.use(session({
 app.use('/users', usersController);
 app.use('/products', productsController)
 app.use('/sessions', sessionsController)
-app.use('/users/:userId/carts', cartsController)
+app.use('/users/:userId/cart', cartsController)
 app.use('/products/:productId/feedback', feedbackController)
 
 //CONNECT SERVER TO WORLD!

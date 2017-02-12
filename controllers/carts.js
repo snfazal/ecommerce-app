@@ -10,7 +10,7 @@ router.post('/:productId/add', function(req, res){
   .exec(function(err, product){
     if(err) console.log(err);
 
-    User.update({_id: req.body.userId}, {
+    User.update({_id: req.session.currentUser._id}, {
       $push: {
         cart: {
           product: product,
@@ -18,9 +18,9 @@ router.post('/:productId/add', function(req, res){
         }
       }
     })
-    .exec(function(err, message){
+    .exec(function(err, success){
       if(err) console.log(err);
-      res.json({message})
+      res.json({success, message: `Added ${product.name} successfully`})
     })
   })
 })

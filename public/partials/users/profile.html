@@ -1,1 +1,8 @@
-<h1>profile page!</h1>
+<div ng-controller="ProductsController as products">
+  <h1>{{home.currentUser.username}} Profile</h1>
+  <h3>Email: {{home.currentUser.email}}</h3>
+
+  <p ng-click="products.showCart(home.currentUser)">Go to cart</p>
+
+
+</div>
