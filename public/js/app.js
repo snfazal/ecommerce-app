@@ -33,14 +33,14 @@ function UsersController($http, $state, $scope, $rootScope){
   function profile(currentUser) {
     $http.get(`/users/${currentUser._id}`)
       .then(function(response){
-<<<<<<< HEAD
-      console.log(response)
-      $state.go('profile', {userId: currentUser._id});
-=======
+
+      // console.log(response)
+      // $state.go('profile', {userId: currentUser._id});
+
         console.log('Profile route: ', response)
         console.log(currentUser.cart)
         $state.go('profile', {userId: currentUser._id});
->>>>>>> 8ad1188080dd9670dc41fdf1399f33e24c696b9b
+
       })
   }
 
