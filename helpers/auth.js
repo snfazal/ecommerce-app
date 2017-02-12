@@ -19,7 +19,7 @@ function loginUser(req, res, next) {
       res.json({status: 401, data: "Unauthorized, log in first"})
 
     } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
-      console.log('foundUser', foundUser)
+      console.log('Password match, logging in...', foundUser)
       req.session.currentUser = foundUser;
     }
     next()
