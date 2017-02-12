@@ -83,5 +83,5 @@ function ProductsController($scope, $http, $state, $rootScope){
       });
     }
 
-    function
+//     function
 }
