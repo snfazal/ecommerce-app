@@ -21,8 +21,8 @@ function HomeController($scope, $http) {
 function UsersController($http, $state, $scope, $rootScope){
   var self = this;
 
-  function signup(userPass){
-    $http.post('/users', userPass)
+  function signup(currentUser){
+    $http.post('/users', currentUser)
       .then(function(response){
         console.log('New User signed up: ', response.data.currentUser);
         $scope.$emit('userLoggedIn', response.data.currentUser);
@@ -31,7 +31,9 @@ function UsersController($http, $state, $scope, $rootScope){
   }
 
   function profile(currentUser) {
+
     $http.get(`/users/${currentUser._id}`)
+
       .then(function(response){
 
       // console.log(response)
@@ -44,8 +46,8 @@ function UsersController($http, $state, $scope, $rootScope){
       })
   }
 
-  function login(userPass){
-    $http.post('/sessions/login', userPass)
+  function login(currentUser){
+    $http.post('/sessions/login', currentUser)
     .then(function(response){
       console.log('User logged in: ', response.data.currentUser)
       $state.go('index')
@@ -73,9 +75,6 @@ function ProductsController($scope, $http, $state, $rootScope){
     var self = this;
 
 
-    // self.showProducts = showProducts;
-    // self.productsCreated = [];
-
     //on click will take user to specific product page
   function showProducts(){
     $http
@@ -102,7 +101,7 @@ function ProductsController($scope, $http, $state, $rootScope){
     $state.go('cart', {userId: currentUser._id})
   }
 
-
+  self.showProducts = showProducts;
   self.addToCart = addToCart;
   self.showCart = showCart;
 
