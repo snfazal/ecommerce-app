@@ -71,7 +71,7 @@ function UsersController($http, $state, $scope, $rootScope){
 
 function ProductsController($scope, $http, $state, $rootScope){
     var self = this;
-<<<<<<< HEAD
+
 
     self.showProducts = showProducts;
     self.productsCreated = [];
@@ -89,7 +89,6 @@ function ProductsController($scope, $http, $state, $rootScope){
       });
     }
 
-=======
 
   function addToCart(product, currentUser){
     $http.post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
