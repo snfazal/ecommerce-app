@@ -30,7 +30,7 @@ var products = [{
         quantity: 2
     },
     {
-        name: 'Goat Challice',
+        name: 'Goat Chalice',
         img: 'http://cdn.hiconsumption.com/wp-content/uploads/2014/12/Goat-Mug-01.jpg',
         price: 10,
         quantity: 10
