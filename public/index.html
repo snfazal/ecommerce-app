@@ -17,7 +17,11 @@
         <img id="logo" ng-src="https://img.clipartfox.com/2c52beffd0d853a65dee5af19a420a81_a-trybeforeyoubuy-franchise-clipart-store_300-300.png" ui-sref="index">
         <ul id="navlinks">
 
+        <!-- if user is logged out, show login button on nav -->
+
           <li ng-if="!home.currentUser" ui-sref="login">Login</li>
+
+        <!-- if user is logged in show cart, profile and logout buttons on nav bar -->
 
           <li ng-if="home.currentUser"  ng-click="users.cart(home.currentUser)">Cart</li>
 
@@ -27,11 +31,6 @@
         </ul>
       </nav>
     </header>
-
-    <div class="content">
-    <!-- page content below nav bar -->
-
-    </div>
 
     <ui-view>
     <!-- partials will render here -->
