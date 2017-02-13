@@ -97,12 +97,12 @@ function ProductsController($scope, $http, $state, $rootScope){
   showProducts();
 
   //removes currentUser's items from cart
-  function removeCart(id, currentUser){
-    console.log(id)
-    $https.delete(`users/${currentUser}._id/cart/${product._id}/delete`, {userId: currentUser._id})
+  function removeCart(currentUser){
+    $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
     $state.go('cart', {userId: currentUser._id})
   }
 
+  self.removeCart = removeCart;
   self.showProducts = showProducts;
   self.showCart = showCart;
 }
