@@ -96,15 +96,10 @@ function ProductsController($scope, $http, $state, $rootScope){
 
   showProducts();
 
-  //removes currentUser's items from cart
-  function removeCart(currentUser){
-    $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
-    $state.go('cart', {userId: currentUser._id})
-  }
 
-  self.removeCart = removeCart;
+
   self.showProducts = showProducts;
-  self.showCart = showCart;
+
 }
 
 function CartsController($scope, $http, $state, $rootScope){
@@ -119,5 +114,13 @@ function CartsController($scope, $http, $state, $rootScope){
     })
   }
 
+  //removes currentUser's items from cart
+  function removeCart(product, currentUser){
+    $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
+    $state.go('cart', {userId: currentUser._id})
+  }
+
+
   self.addToCart = addToCart;
+  self.removeCart = removeCart;
 }
