@@ -10,7 +10,7 @@
         <p class="price">{{product.price | currency}}</p>
         <p class="quantity">{{product.quantity}} in stock!</p>
         <div ng-controller="CartsController as cart">
-          <input type="text" value=1 style="width: 40%;">
+          <input ng-model="cart.quantityToBuy" type="text" placeholder="1" style="width: 40%;">
           <button ng-click="cart.addToCart(product, home.currentUser)">Buy!</button>
         </div>
       </div>
