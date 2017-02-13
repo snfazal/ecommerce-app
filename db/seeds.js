@@ -12,7 +12,7 @@ var products = [{
         quantity: 10
     },
     {
-        name: 'Dubugging Cups',
+        name: 'Debugging Cups',
         img: 'http://www.macro-chef.com/wp-content/uploads/2015/01/DSC_2261-1024x692.jpg',
         price: 2,
         quantity: 100
@@ -30,20 +30,20 @@ var products = [{
         quantity: 2
     },
     {
-        name: 'Goat Mug',
+        name: 'Goat Challice',
         img: 'http://cdn.hiconsumption.com/wp-content/uploads/2014/12/Goat-Mug-01.jpg',
         price: 10,
         quantity: 10
     },
     {
-      name: 'Fat Genius Balls',
+      name: 'production bombs',
       img: 'http://www.chocolatecoveredkatie.com/wp-content/uploads/low-fat-chocolate-truffles_CCD6/truffles_thumb.jpg?x22297',
       price: 15,
       quantity: 2
     },
     {
-      name: 'Elixer of Life',
-      img: 'http://media.istockphoto.com/illustrations/mason-jar-with-water-isolated-on-white-illustration-id615896254?k=6&m=615896254&s=170667a&w=0&h=NXyR_TdlTcjXJSPK6dV54FEi2ysMmj8XCm1DGGczh68=',
+      name: 'Elixir of Life',
+      img: 'http://www.philzcoffee.com/images/sca/subscriptions.png',
       price: 5,
       quantity: 10
     }
