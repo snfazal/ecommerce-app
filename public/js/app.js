@@ -89,17 +89,21 @@ function ProductsController($scope, $http, $state, $rootScope){
 
   showProducts();
 
-    //will add currentUser's selected product to cart
-
+  //will add currentUser's selected product to cart
   function addToCart(product, currentUser){
-    $http.post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
+    $http
+    .post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
     .then(function(response){
-      console.log('add to cart route ', response.message)
+      console.log('add to cart route ')
     })
   }
 
   //shows currentUser's product inside cart function
   function showCart(currentUser){
+    $state.go('cart', {userId: currentUser._id})
+  }
+
+  function deleteCart(currentUser){
     $state.go('cart', {userId: currentUser._id})
   }
 
