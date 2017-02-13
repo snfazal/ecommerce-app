@@ -14,6 +14,7 @@ function HomeController($scope, $http) {
   });
 
   $scope.$on('userLoggedOut', function(event){
+    self.currentUser = null;
     console.log('User logged out!')
   })
 }
