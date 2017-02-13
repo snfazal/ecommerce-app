@@ -103,7 +103,8 @@ function ProductsController($scope, $http, $state, $rootScope){
     $state.go('cart', {userId: currentUser._id})
   }
 
-  function deleteCart(currentUser){
+  //removes currentUser's items from cart
+  function removeCart(currentUser){
     $state.go('cart', {userId: currentUser._id})
   }
 
