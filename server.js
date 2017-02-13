@@ -41,7 +41,7 @@ app.use(session({
   secret: process.env.APPSECRET, //APPSECRET=mike
   resave: true,
   saveUninitialized: false,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 3600000 }
 }))
 
 //SET ROUTES TO HIT CONTROLLERS
