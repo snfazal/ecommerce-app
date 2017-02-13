@@ -8,7 +8,8 @@ function StoreRouter($stateProvider, $urlRouterProvider){
 
   $stateProvider
   .state('index', {
-    url: '/'
+    url: '/',
+    templateUrl: '/partials/products/index.html'
   })
   .state('signup', {
     url: '/users/signup',

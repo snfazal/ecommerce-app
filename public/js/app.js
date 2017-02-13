@@ -14,6 +14,7 @@ function HomeController($scope, $http) {
   });
 
   $scope.$on('userLoggedOut', function(event){
+    self.currentUser = null;
     console.log('User logged out!')
   })
 }
@@ -21,8 +22,8 @@ function HomeController($scope, $http) {
 function UsersController($http, $state, $scope, $rootScope){
   var self = this;
 
-  function signup(userPass){
-    $http.post('/users', userPass)
+  function signup(currentUser){
+    $http.post('/users', currentUser)
       .then(function(response){
         console.log('New User signed up: ', response.data.currentUser);
         $scope.$emit('userLoggedIn', response.data.currentUser);
@@ -31,16 +32,23 @@ function UsersController($http, $state, $scope, $rootScope){
   }
 
   function profile(currentUser) {
+
     $http.get(`/users/${currentUser._id}`)
+
       .then(function(response){
+
+      // console.log(response)
+      // $state.go('profile', {userId: currentUser._id});
+
         console.log('Profile route: ', response)
         console.log(currentUser.cart)
         $state.go('profile', {userId: currentUser._id});
+
       })
   }
 
-  function login(userPass){
-    $http.post('/sessions/login', userPass)
+  function login(currentUser){
+    $http.post('/sessions/login', currentUser)
     .then(function(response){
       console.log('User logged in: ', response.data.currentUser)
       $state.go('index')
@@ -67,6 +75,22 @@ function UsersController($http, $state, $scope, $rootScope){
 function ProductsController($scope, $http, $state, $rootScope){
     var self = this;
 
+
+    //on click will take user to specific product page
+  function showProducts(){
+    $http
+    .get('/products/')
+    .then(function(response){
+      console.log(response);
+      console.log('hit rouuute');
+      self.allProducts = response.data.products
+    });
+  }
+
+  showProducts();
+
+    //will add currentUser's selected product to cart
+
   function addToCart(product, currentUser){
     $http.post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
     .then(function(response){
@@ -74,10 +98,13 @@ function ProductsController($scope, $http, $state, $rootScope){
     })
   }
 
+  //shows currentUser's product inside cart function
   function showCart(currentUser){
     $state.go('cart', {userId: currentUser._id})
   }
 
+  self.showProducts = showProducts;
   self.addToCart = addToCart;
   self.showCart = showCart;
+
 }
