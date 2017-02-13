@@ -118,7 +118,7 @@ function CartsController($scope, $http, $state, $rootScope){
   //will add currentUser's selected product to cart
   function addToCart(product, currentUser){
     $http
-    .post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
+    .post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: self.quantityToBuy})
     .then(function(response){
       console.log('add to cart route ', response)
     })
