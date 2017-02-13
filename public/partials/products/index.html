@@ -1,7 +1,5 @@
 <div ng-controller="ProductsController as products">
 
-  <h1>HOME PAGE</h1>
-
   <!-- lists all products and let's you click on them -->
   <ul>
     <li ng-repeat="product in products.allProducts">{{product.name}}
@@ -10,9 +8,5 @@
     </li>
 
   </ul>
-
-  <div ng-click="products.showProducts()">click this</div>
-
-
 
 </div>

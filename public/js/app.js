@@ -83,10 +83,10 @@ function ProductsController($scope, $http, $state, $rootScope){
       console.log(response);
       console.log('hit rouuute');
       self.allProducts = response.data.products
-      // if(response.data.status === 401){return}
-      $state.go('index');
     });
   }
+
+  showProducts();
 
     //will add currenUser's selected product to cart
   function addToCart(product, currentUser){
