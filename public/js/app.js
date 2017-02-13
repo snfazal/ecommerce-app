@@ -96,11 +96,6 @@ function ProductsController($scope, $http, $state, $rootScope){
 
   showProducts();
 
-  //shows currentUser's product inside cart function
-  function showCart(currentUser){
-    $state.go('cart', {userId: currentUser._id})
-  }
-
   //removes currentUser's items from cart
   function removeCart(id, currentUser){
     console.log(id)
