@@ -8,7 +8,25 @@
     <script src="./js/router.js" charset="utf-8"></script>
     <script src="./js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/styles.css">
+
   </head>
+
+  <header id="logo"><a href="index.html"><span id="logo">logo goes here</span></a></header>
+
+  <nav id= "fixedbar">
+    <ul id="fixednav">
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="localhost:4000/#/products/profile.html">Profile</a></li>
+      <li><a href="/partials/users/signup.html">Signup</a></li>
+      <li><a href="/partials/products/index.html">Products</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+<!-- page content below nav bar -->
+
+
+  </div>
   <body ng-controller="HomeController as home">
     <h1 ui-sref="index">Homepage!</h1>
     <p>css connected!</p>
@@ -22,6 +40,7 @@
       <button ng-click="users.logout()">logout</button>
 
     </div>
+
 
     <ui-view>
     </ui-view>

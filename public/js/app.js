@@ -88,7 +88,8 @@ function ProductsController($scope, $http, $state, $rootScope){
 
   showProducts();
 
-    //will add currenUser's selected product to cart
+    //will add currentUser's selected product to cart
+
   function addToCart(product, currentUser){
     $http.post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: 2})
     .then(function(response){
