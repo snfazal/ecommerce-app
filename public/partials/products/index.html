@@ -6,8 +6,14 @@
 
       <img ng-src={{product.img}}>
 
-      <p><span class="price">{{product.price | currency}}</span> <span class="quantity">{{product.quantity}}</span></p>
-      <button type="button" name="button"></button>
+      <div class="info">
+        <p class="price">{{product.price | currency}}</p>
+        <p class="quantity">{{product.quantity}} in stock!</p>
+        <div>
+          <input type="text" value=1 style="width: 40%;">
+          <button ng-click="products.click()">Buy!</button>
+        </div>
+      </div>
     </div>
 
 </div>

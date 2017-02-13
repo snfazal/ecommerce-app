@@ -112,5 +112,4 @@ function ProductsController($scope, $http, $state, $rootScope){
   self.showProducts = showProducts;
   self.addToCart = addToCart;
   self.showCart = showCart;
-
 }
