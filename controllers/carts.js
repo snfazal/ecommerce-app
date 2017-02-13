@@ -20,8 +20,18 @@ router.post('/:productId/add', function(req, res){
     })
     .exec(function(err, success){
       if(err) console.log(err);
-      res.json({success, message: `Added ${product.name} successfully`})
+      res.json({success, message: `Added ${product.name} successfully`, product})
     })
+  })
+})
+
+//GET CART CONTENTS - get cart contents for current user
+router.get('/', function(req, res){
+  User.findById(req.session.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err);
+
+    res.json({cart: user.cart})
   })
 })
 

@@ -19,6 +19,8 @@
 
           <li ng-if="!home.currentUser" ui-sref="login">Login</li>
 
+          <li ng-if="home.currentUser"  ng-click="users.cart(home.currentUser)">Cart</li>
+
           <li ng-if="home.currentUser"  ng-click="users.profile(home.currentUser)">Profile</li>
 
           <li ng-if="home.currentUser" ng-click="users.logout()">Logout</li>
