@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #555;
   /*border: 1px solid black;*/
 }
 
@@ -45,7 +46,7 @@
 }
 
 .product {
-  width: 270px;
+  width: 400px;
   margin: 25px 25px;
   display: flex;
   flex-flow: column;
@@ -148,3 +149,17 @@ button {
   width: 100px;
 }
 /*end of signup form*/
+
+@media (max-width: 400px) {
+  .product {
+    width: 270px;
+    margin: 25px 25px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 0 30px #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+>>>>>>> 3bf8b1fb412306f06ad4700c1f3938af5bd5999d

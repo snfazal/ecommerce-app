@@ -10,6 +10,7 @@ router.post('/:productId/add', function(req, res){
   .exec(function(err, product){
     if(err) console.log(err);
 
+
     var previousQuantity = 0
 
     User.findById(req.session.currentUser._id)
@@ -31,6 +32,7 @@ router.post('/:productId/add', function(req, res){
             product: product,
             quantity: parseInt(previousQuantity) + parseInt(req.body.quantity)
           }
+
         }
     })
 
