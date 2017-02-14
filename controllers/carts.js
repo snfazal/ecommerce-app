@@ -43,6 +43,18 @@ router.post('/:productId/add', function(req, res){
   });
 });
 
+//Update cart quantities - take quantity from update field on cart page, replace old quantity with new
+router.patch('/:productId', function(req, res){
+  User.findByIdAndUpdate(req.session.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err);
+    var product = user.cart.id(req.params.productId)
+      product.quantity = req.body.quantityToBuy
+    user.save();
+    res.json({cart: user.cart})
+  })
+})
+
 
 //GET CART CONTENTS - get cart contents for current user
 router.get('/', function(req, res){
