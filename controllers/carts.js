@@ -11,6 +11,13 @@ router.post('/:productId/add', function(req, res){
     if(err) console.log(err);
 
     //if user.cart.product(productId) exists, quantity += req.body.quantity, else...push as below
+    // User.findById(req.session.currentUser._id)
+    //   .exec(function(err, user){
+    //     user.cart.forEach(function(item){
+    //       console.log(!!(item.product.id == req.params.id));
+    //     });
+    //   })
+
     User.update({_id: req.session.currentUser._id}, {
       $push: {
         cart: {
