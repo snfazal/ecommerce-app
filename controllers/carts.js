@@ -10,6 +10,7 @@ router.post('/:productId/add', function(req, res){
   .exec(function(err, product){
     if(err) console.log(err);
 
+    //if user.cart.product(productId) exists, quantity += req.body.quantity, else...push as below
     User.update({_id: req.session.currentUser._id}, {
       $push: {
         cart: {
