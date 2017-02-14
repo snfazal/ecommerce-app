@@ -41,12 +41,9 @@ function UsersController($http, $state, $scope, $rootScope){
         $state.go('index')
       })
   }
-<<<<<<< HEAD
-  //opens cU's profile
-=======
 
   //takes user to profile page
->>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
+
   function profile(currentUser) {
     $http.get(`/users/${currentUser._id}`)
       .then(function(response){
@@ -54,13 +51,11 @@ function UsersController($http, $state, $scope, $rootScope){
         $state.go('profile', {userId: currentUser._id});
       })
   }
-<<<<<<< HEAD
-  //holds the cart with cU's products for purchase
-=======
+
 
 
   //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
->>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
+
   function cart(currentUser) {
     $http.get(`/users/${currentUser._id}/cart`)
     .then(function(response){
@@ -68,12 +63,10 @@ function UsersController($http, $state, $scope, $rootScope){
       $state.go('cart')
     })
   }
-<<<<<<< HEAD
-  
-=======
+
 
   //sends login credentials to backend in order to verify correct email and pass entered
->>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
+
   function login(currentUser){
     $http.post('/sessions/login', currentUser)
     .then(function(response){
