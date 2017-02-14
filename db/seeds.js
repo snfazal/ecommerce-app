@@ -3,7 +3,8 @@ var Product = require('../models/product.js');
 
 mongoose.Promise = global.Promise;
 
-var db = mongoose.connect('mongodb://localhost:27017/ecommerce-app');
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/ecommerce-app';
+mongoose.connect(mongoURI)
 
 var products = [{
         name: 'Meltdown Muffins',
