@@ -35,5 +35,17 @@ router.get('/', function(req, res){
   })
 })
 
+//removes currentUser's items from cart
+router.delete('/:productId/delete', function(req, res){
+  User.findById(req.session.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err);
+    var product = user.cart.id(req.params.productId)
+      product.remove();
+    user.save();
+    res.json({cart: user.cart})
+  })
+})
+
 
 module.exports = router;

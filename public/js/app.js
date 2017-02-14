@@ -9,16 +9,19 @@ angular.module('ecommerce-app')
 function HomeController($scope, $http) {
   var self = this;
 
+  //saves the user who just logged in to the home controller for use by other functions
   $scope.$on('userLoggedIn', function(event, data){
     self.currentUser = data;
     console.log(`${self.currentUser.username} logged in!`)
   });
 
+  //if user logs out, clears currentUser
   $scope.$on('userLoggedOut', function(event){
     self.currentUser = null;
     console.log('User logged out!')
   })
 
+  //if user adds or removes from cart, update front-end copy of the cart
   $scope.$on('updateCart', function(event, data){
     self.currentUser.cart = data;
     console.log('Updated Cart!')
@@ -28,6 +31,7 @@ function HomeController($scope, $http) {
 function UsersController($http, $state, $scope, $rootScope){
   var self = this;
 
+  //sends data from signup form to backend in order to create a new user on DB
   function signup(currentUser){
     $http.post('/users', currentUser)
       .then(function(response){
@@ -37,7 +41,12 @@ function UsersController($http, $state, $scope, $rootScope){
         $state.go('index')
       })
   }
+<<<<<<< HEAD
   //opens cU's profile
+=======
+
+  //takes user to profile page
+>>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
   function profile(currentUser) {
     $http.get(`/users/${currentUser._id}`)
       .then(function(response){
@@ -45,7 +54,13 @@ function UsersController($http, $state, $scope, $rootScope){
         $state.go('profile', {userId: currentUser._id});
       })
   }
+<<<<<<< HEAD
   //holds the cart with cU's products for purchase
+=======
+
+
+  //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
+>>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
   function cart(currentUser) {
     $http.get(`/users/${currentUser._id}/cart`)
     .then(function(response){
@@ -53,7 +68,12 @@ function UsersController($http, $state, $scope, $rootScope){
       $state.go('cart')
     })
   }
+<<<<<<< HEAD
   
+=======
+
+  //sends login credentials to backend in order to verify correct email and pass entered
+>>>>>>> eab2093528fe9b24ebde89a08c4b0c56b4456099
   function login(currentUser){
     $http.post('/sessions/login', currentUser)
     .then(function(response){
@@ -63,6 +83,7 @@ function UsersController($http, $state, $scope, $rootScope){
     })
   }
 
+  //deletes current req.session cookie, logging out user
   function logout() {
     $http.delete('/sessions')
       .then(function(response) {
@@ -94,13 +115,9 @@ function ProductsController($scope, $http, $state, $rootScope){
       self.allProducts = response.data.products
     });
   }
-
   showProducts();
 
-
-
   self.showProducts = showProducts;
-
 }
 
 function CartsController($scope, $http, $state, $rootScope){
@@ -116,12 +133,15 @@ function CartsController($scope, $http, $state, $rootScope){
   }
 
   //removes currentUser's items from cart
-  function removeCart(product, currentUser){
+  function removeFromCart(product, currentUser){
     $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
-    $state.go('cart', {userId: currentUser._id})
+    .then(function(response){
+      $state.go('cart', {userId: currentUser._id})
+      $scope.$emit('updateCart', response.data.cart);
+    })
   }
 
 
   self.addToCart = addToCart;
-  self.removeCart = removeCart;
+  self.removeFromCart = removeFromCart;
 }
