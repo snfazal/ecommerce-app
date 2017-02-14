@@ -46,16 +46,28 @@
 
 .product {
   width: 270px;
-  margin: 50px 25px;
+  margin: 25px 25px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 0 30px #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 
+.product > * {
+  padding: 15px;
 }
 
 .product img {
   width: 100%;
-  margin: 35px 0;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.product h2 {
+  text-transform: capitalize;
 }
 
 .product .info {
