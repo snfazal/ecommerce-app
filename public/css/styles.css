@@ -45,7 +45,7 @@
 }
 
 .product {
-  width: 270px;
+  width: 400px;
   margin: 25px 25px;
   display: flex;
   flex-flow: column;
@@ -114,4 +114,18 @@ button {
 .cart_product div:last-of-type > div > * {
   margin: 5px;
   width: 75px;
+}
+
+@media (max-width: 400px) {
+  .product {
+    width: 270px;
+    margin: 25px 25px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 0 30px #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
 }
