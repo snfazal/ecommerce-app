@@ -60,7 +60,7 @@ function UsersController($http, $state, $scope, $rootScope){
     $http.get(`/users/${currentUser._id}/cart`)
     .then(function(response){
       $scope.$emit('updateCart', response.data.cart);
-      $state.go('cart')
+      $state.go('cart', {userId: currentUser._id})
     })
   }
 
@@ -129,12 +129,22 @@ function CartsController($scope, $http, $state, $rootScope){
   function removeFromCart(product, currentUser){
     $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
     .then(function(response){
-      $state.go('cart', {userId: currentUser._id})
       $scope.$emit('updateCart', response.data.cart);
+      $state.go('cart', {userId: currentUser._id})
+    })
+  }
+
+  //update quantity of item in cart
+  function updateQuantity(product, currentUser){
+    $http.patch(`users/${currentUser._id}/cart/${product._id}`, {quantityToBuy: self.quantityToBuy})
+    .then(function(response){
+      $scope.$emit('updateCart', response.data.cart);
+      $state.go('cart', {userId: currentUser._id})
     })
   }
 
 
   self.addToCart = addToCart;
   self.removeFromCart = removeFromCart;
+  self.updateQuantity = updateQuantity;
 }

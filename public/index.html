@@ -14,7 +14,10 @@
   <body ng-controller="HomeController as home">
     <header>
       <nav id= "navbar" ng-controller="UsersController as users">
-        <img id="logo" ng-src="https://img.clipartfox.com/2c52beffd0d853a65dee5af19a420a81_a-trybeforeyoubuy-franchise-clipart-store_300-300.png" ui-sref="index">
+        <div ui-sref="index" id="logo">
+          <img ng-src="https://img.clipartfox.com/2c52beffd0d853a65dee5af19a420a81_a-trybeforeyoubuy-franchise-clipart-store_300-300.png">
+          <p style="display: inline-block">Home</p>
+        </div>
         <ul id="navlinks">
 
         <!-- if user is logged out, show login button on nav -->

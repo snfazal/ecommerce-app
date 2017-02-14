@@ -4,34 +4,59 @@ var User = require('../models/user.js');
 var Cart = require('../models/cart.js')
 var Product = require('../models/product.js')
 
-//ADD PRODUCT TO SHOPPING CART - When buy button clicked on product index route, add clicked item to cart... basically its searching for both a product by the url params and a user by the passed userId, then pushing the product into the cart array
+//ADD PRODUCT TO SHOPPING CART - When buy button clicked on product index route, add clicked item to cart... if product exists in cart, product is removed and readded with new quantity
 router.post('/:productId/add', function(req, res){
   Product.findById(req.params.productId)
   .exec(function(err, product){
     if(err) console.log(err);
 
-    //if user.cart.product(productId) exists, quantity += req.body.quantity, else...push as below
-    // User.findById(req.session.currentUser._id)
-    //   .exec(function(err, user){
-    //     user.cart.forEach(function(item){
-    //       console.log(!!(item.product.id == req.params.id));
-    //     });
-    //   })
 
-    User.update({_id: req.session.currentUser._id}, {
-      $push: {
-        cart: {
-          product: product,
-          quantity: req.body.quantity
+    var previousQuantity = 0
+
+    User.findById(req.session.currentUser._id)
+
+    .exec(function(err, user){
+      user.cart.forEach(function(item) {
+        console.log(item.product.id == req.params.productId)
+        if(item.product.id == req.params.productId){
+          matchedProduct = item;
+          previousQuantity = item.quantity
+          matchedProduct.remove();
         }
-      }
+        user.save();
+      })
+
+      User.update({_id: req.session.currentUser._id}, {
+        $push: {
+          cart: {
+            product: product,
+            quantity: parseInt(previousQuantity) + parseInt(req.body.quantity)
+          }
+
+        }
     })
-    .exec(function(err, success){
-      if(err) console.log(err);
-      res.json({success, message: `Added ${product.name} successfully`, product})
+
+      .exec(function(err, success){
+        if(err) console.log(err);
+        res.json({success, message: `Added ${product.name} successfully`})
+      });
+      console.log('no match')
     })
+  });
+});
+
+//Update cart quantities - take quantity from update field on cart page, replace old quantity with new
+router.patch('/:productId', function(req, res){
+  User.findByIdAndUpdate(req.session.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err);
+    var product = user.cart.id(req.params.productId)
+      product.quantity = req.body.quantityToBuy
+    user.save();
+    res.json({cart: user.cart})
   })
 })
+
 
 //GET CART CONTENTS - get cart contents for current user
 router.get('/', function(req, res){
@@ -43,7 +68,7 @@ router.get('/', function(req, res){
   })
 })
 
-//removes currentUser's items from cart
+//removes deleted item from currentUser's cart
 router.delete('/:productId/delete', function(req, res){
   User.findById(req.session.currentUser._id)
   .exec(function(err, user){
