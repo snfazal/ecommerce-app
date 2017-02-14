@@ -6,44 +6,44 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connect('mongodb://localhost:27017/ecommerce-app');
 
 var products = [{
-        name: 'Toilet Paper',
-        img: 'https://cdn.thisiswhyimbroke.com/images/donald-trump-toilet-paper.jpg',
+        name: 'Meltdown Muffins',
+        img: 'http://www.ambitiouskitchen.com/wp-content/uploads/2013/03/5-IMG_8682.jpg',
         price: 1,
         quantity: 10
     },
     {
-        name: 'Paper Towels',
-        img: 'http://ghk.h-cdn.co/assets/cm/15/11/54feec62af58e-ghk-bounty-paper-towel-xl.jpg',
+        name: 'Debugging Cups',
+        img: 'http://www.macro-chef.com/wp-content/uploads/2015/01/DSC_2261-1024x692.jpg',
         price: 2,
         quantity: 100
     },
     {
-        name: 'Hat',
-        img: 'https://ae01.alicdn.com/kf/HTB1B4VQKpXXXXbBXFXXq6xXFXXXT/Donald-font-b-Trump-b-font-font-b-Hat-b-font-Make-America-Great-Again-font.jpg',
+        name: 'Java Juice',
+        img: 'http://rabbitfoodformybunnyteeth.com/wp-content/uploads/2013/11/Juicing-for-Dummies-Homemade-Juice-Cleanse-17.jpg',
         price: 10,
         quantity: 100
     },
     {
-        name: 'Sunglasses',
-        img: 'https://brobible.files.wordpress.com/2016/06/classic-polarized-wayfarer-sunglasses.jpg?quality=90&w=650',
+        name: 'Power On Mix',
+        img: 'http://www.cottercrunch.com/wp-content/uploads/2016/11/pumpkin-spice-trail-mix-slow-cooker-3-copy.jpg',
         price: 50,
         quantity: 2
     },
     {
-        name: 'T-Shirt',
-        img: 'https://files.slack.com/files-pri/T0351JZQ0-F444BMYN6/mcga3827-black-at.jpg',
+        name: 'Goat Chalice',
+        img: 'http://cdn.hiconsumption.com/wp-content/uploads/2014/12/Goat-Mug-01.jpg',
         price: 10,
         quantity: 10
     },
     {
-      name: 'Chia Pet',
-      img: 'https://files.slack.com/files-tmb/T0351JZQ0-F446ZU51B-35e53f7d4d/pasted_image_at_2017_02_10_04_05_pm_360.png',
+      name: 'production bombs',
+      img: 'http://www.chocolatecoveredkatie.com/wp-content/uploads/low-fat-chocolate-truffles_CCD6/truffles_thumb.jpg?x22297',
       price: 15,
       quantity: 2
     },
     {
-      name: 'Candle',
-      img: 'https://files.slack.com/files-tmb/T0351JZQ0-F44QDKLS2-3e9f735c49/il_570xn.1039253913_6i2k_480.jpg',
+      name: 'Elixir of Life',
+      img: 'http://www.philzcoffee.com/images/sca/subscriptions.png',
       price: 5,
       quantity: 10
     }
