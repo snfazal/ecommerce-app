@@ -60,7 +60,7 @@ function UsersController($http, $state, $scope, $rootScope){
     $http.get(`/users/${currentUser._id}/cart`)
     .then(function(response){
       $scope.$emit('updateCart', response.data.cart);
-      $state.go('cart')
+      $state.go('cart', {userId: currentUser._id})
     })
   }
 
