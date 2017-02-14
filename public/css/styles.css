@@ -114,3 +114,8 @@ button {
 }
 /*end login form*/
 /*start of signup form*/
+.signup {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2em;
+}
