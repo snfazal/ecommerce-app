@@ -32,7 +32,7 @@ router.post('/:productId/add', function(req, res){
             quantity: parseInt(previousQuantity) + parseInt(req.body.quantity)
           }
         }
-      })
+    })
 
       .exec(function(err, success){
         if(err) console.log(err);
