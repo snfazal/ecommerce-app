@@ -1,5 +1,7 @@
 <!-- page for items currently inside the cart -->
-<h2> Items currently in {{home.currentUser.username}}'s cart:</h2>
+<div ng-controller="CartsController as cart">
+
+  <h2> Items currently in {{home.currentUser.username}}'s cart:</h2>
   <div ng-repeat='product in home.currentUser.cart' class="cart_product">
     <div>
       <h3>{{product.product.name}}</h3>
@@ -11,7 +13,9 @@
       </div>
       <div>
         <input ng-model="cart.quantityToBuy" type="text" placeholder="{{product.quantity}}">
-        <button ng-click="cart.addToCart(product, home.currentUser)">Update</button>
+        <button ng-click="cart.updateQuantity(product, home.currentUser)">Update</button>
       </div>
     </div>
   </div>
+
+</div>
