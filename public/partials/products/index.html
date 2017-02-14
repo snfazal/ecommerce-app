@@ -1,0 +1,19 @@
+<div ng-controller="ProductsController as products" class="products_index">
+
+  <!-- lists all products and let's you click on them -->
+    <div class="product" ng-repeat="product in products.allProducts">
+      <h2>{{product.name}}</h2>
+
+      <img ng-src={{product.img}}>
+
+      <div class="info">
+        <p class="price">{{product.price | currency}}</p>
+        <p class="quantity">{{product.quantity}} in stock!</p>
+        <div ng-controller="CartsController as cart">
+          <input ng-model="cart.quantityToBuy" type="text" placeholder="1" style="width: 40%;">
+          <button ng-click="cart.addToCart(product, home.currentUser)">Buy!</button>
+        </div>
+      </div>
+    </div>
+
+</div>

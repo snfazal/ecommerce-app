@@ -2,20 +2,39 @@
 <html ng-app="ecommerce-app">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width">
     <title>E-Commerce App</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="./js/router.js" charset="utf-8"></script>
     <script src="./js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
-    <h1>Homepage!</h1>
-    <p>css connected!</p>
 
-    <li ui-sref="signup">signup</li>
+  </head>
+  <body ng-controller="HomeController as home">
+    <header>
+      <nav id= "navbar" ng-controller="UsersController as users">
+        <img id="logo" ng-src="https://img.clipartfox.com/2c52beffd0d853a65dee5af19a420a81_a-trybeforeyoubuy-franchise-clipart-store_300-300.png" ui-sref="index">
+        <ul id="navlinks">
+
+        <!-- if user is logged out, show login button on nav -->
+
+          <li ng-if="!home.currentUser" ui-sref="login">Login</li>
+
+        <!-- if user is logged in show cart, profile and logout buttons on nav bar -->
+
+          <li ng-if="home.currentUser"  ng-click="users.cart(home.currentUser)">Cart</li>
+
+          <li ng-if="home.currentUser"  ng-click="users.profile(home.currentUser)">Profile</li>
+
+          <li ng-if="home.currentUser" ng-click="users.logout()">Logout</li>
+        </ul>
+      </nav>
+    </header>
 
     <ui-view>
+    <!-- partials will render here -->
+
     </ui-view>
 
   </body>
