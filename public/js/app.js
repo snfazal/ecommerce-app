@@ -32,11 +32,12 @@ function UsersController($http, $state, $scope, $rootScope){
     $http.post('/users', currentUser)
       .then(function(response){
         console.log('New User signed up: ', response.data.currentUser);
+        //sends the update to the CartsController for currentUser's cart
         $scope.$emit('userLoggedIn', response.data.currentUser);
         $state.go('index')
       })
   }
-
+  //opens cU's profile
   function profile(currentUser) {
     $http.get(`/users/${currentUser._id}`)
       .then(function(response){
@@ -44,7 +45,7 @@ function UsersController($http, $state, $scope, $rootScope){
         $state.go('profile', {userId: currentUser._id});
       })
   }
-
+  //holds the cart with cU's products for purchase
   function cart(currentUser) {
     $http.get(`/users/${currentUser._id}/cart`)
     .then(function(response){
@@ -52,7 +53,7 @@ function UsersController($http, $state, $scope, $rootScope){
       $state.go('cart')
     })
   }
-
+  
   function login(currentUser){
     $http.post('/sessions/login', currentUser)
     .then(function(response){
