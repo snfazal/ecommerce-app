@@ -4,7 +4,7 @@ var User = require('../models/user.js');
 var Cart = require('../models/cart.js')
 var Product = require('../models/product.js')
 
-//ADD PRODUCT TO SHOPPING CART - When buy button clicked on product index route, add clicked item to cart... basically its searching for both a product by the url params and a user by the passed userId, then pushing the product into the cart array
+//ADD PRODUCT TO SHOPPING CART - When buy button clicked on product index route, add clicked item to cart... if product exists in cart, product is removed and readded with new quantity
 router.post('/:productId/add', function(req, res){
   Product.findById(req.params.productId)
   .exec(function(err, product){
@@ -54,7 +54,7 @@ router.get('/', function(req, res){
   })
 })
 
-//removes currentUser's items from cart
+//removes deleted item from currentUser's cart
 router.delete('/:productId/delete', function(req, res){
   User.findById(req.session.currentUser._id)
   .exec(function(err, user){
