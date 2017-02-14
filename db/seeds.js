@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Product = require('../models/Product.js');
+var Product = require('../models/product.js');
 
 mongoose.Promise = global.Promise;
 
