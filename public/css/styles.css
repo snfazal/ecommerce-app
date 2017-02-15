@@ -129,6 +129,10 @@ button {
 }
 
 /*start of login form*/
+.login label {
+  display: inline-block;
+  width: 100px;
+}
 .login {
   text-align: center;
   font-family: sans-serif;
@@ -139,6 +143,8 @@ button {
   list-style: none;
   font-family: sans-serif;
   font-size: 1.2em;
+  text-decoration: underline;
+  color: blue;
 }
 /*end login form*/
 /*start of signup form*/
@@ -154,6 +160,11 @@ button {
   width: 100px;
 }
 /*end of signup form*/
+/*beginning of product page*/
+  .profilepage {
+    text-align: center;
+    font-family: sans-serif;
+  }
 
 
 @media (max-width: 400px) {
