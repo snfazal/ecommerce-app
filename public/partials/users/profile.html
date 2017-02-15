@@ -6,15 +6,15 @@
 
   <h2>You can edit your information below</h2>
   <br>
-  <h3>Email: {{home.currentUser.email}}</h3>
+  <h3>Username: {{home.currentUser.username}}</h3>
   <br>
 
 </div>
 
-  <form ng-submit="users.profile(userPass)">
-    <div>
-      <p>Submit another email address below</p> <br>
-        <input ng-model="userPass.editProfile" type="text" placeholder="{{userPass.email}}">
-      <button ng-click "userPass.addAddress(users, home.currentUser)">add</button>
-    </div>
-  </form>
+  <!-- <form ng-submit="users.updateProfile(home.currentUser)" class="profilepage">
+
+    <p>Submit another email address below</p> <br>
+      <input ng-model="users.newUsername" type="text" placeholder="{{home.currentUser.username}}">
+    <button type="submit">add</button>
+
+  </form> -->

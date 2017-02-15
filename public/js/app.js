@@ -52,8 +52,13 @@ function UsersController($http, $state, $scope, $rootScope){
       })
   }
 
-
-
+  function updateProfile(currentUser){
+    console.log(self.newUsername)
+    $http.patch(`/users/${currentUser._id}`, {username: self.newUsername})
+      .then(function(response){
+        console.log('updated profile', response)
+      })
+  }
 
   //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
 
@@ -90,6 +95,7 @@ function UsersController($http, $state, $scope, $rootScope){
   self.signup = signup;
   self.login = login;
   self.profile = profile;
+  self.updateProfile = updateProfile;
 }
 
 

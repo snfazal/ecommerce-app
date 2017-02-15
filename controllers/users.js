@@ -22,14 +22,26 @@ router.post('/', authHelpers.createSecure, function(req, res){
 });
 
 //GET USER DETAILS - accessed by clicking the 'profile' button in top right and only accessible by logged in users
-router.get('/:id', authHelpers.authorize, function(req, res){
-  User.findById(req.params.id)
+router.get('/:userId', authHelpers.authorize, function(req, res){
+  User.findById(req.sessions.currentUser._id)
     .exec(function(err, user){
       if(err) console.log(err);
 
-      console.log(user);
       res.json({user})
     });
 });
+
+//UPDATE USER DETAILS
+router.patch('/:userId', function(req, res){
+  User.findByIdAndUpdate(req.sessions.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err)
+
+    user.username = req.body.username;
+
+    user.save();
+    res.json({user})
+  })
+})
 
 module.exports = router;
