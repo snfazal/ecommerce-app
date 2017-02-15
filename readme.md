@@ -11,7 +11,7 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
 **navbar visible from all pages**
 
   - link to cart
-  - link to homepage
+  - link to homepage (logo)
   - link to sign in page
 
 1. **Homepage**
@@ -26,6 +26,8 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
 
 4. **Signup page**
   - signup form
+    - username or email
+    - password
 
 5. **Profile page**
   - link to add additional email address in order to better contact customer for purchase delivery
@@ -43,7 +45,7 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
   Purchases made simple
 
 ### Are you thinking of using any API’s?
-  Paypal? Amazon? Etsy?
+  Paypal? Amazon? Etsy? Maybe?
 
 #Technologies Used
 
@@ -108,11 +110,12 @@ Choosing to focus on tasks we were weaker in handling helped push us through the
 - be able to favorite items and have them save for review or purchase in the future
 - be able to view items for sale by their category
 - let users review products and give feedback to the seller
-- let users search for items via a tool bar
+- let users search for items via a search bar
 - let users save previous purchases to reference
-- clear out the cart after checkout
+- let users modify their user profiles
 
 #Unsolved Bugs
+
 
 
 #Final Thoughts
