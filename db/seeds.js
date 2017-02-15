@@ -48,11 +48,19 @@ var products = [{
       price: 10,
       quantity: 10
     },
+    {
       name: 'Unicorn Meat',
       img: 'https://cdn.shopify.com/s/files/1/0996/3344/products/gjc_original_3oz_1.5oz_2_d0ae8d4c-0e80-4716-b70c-0a21d1e9c59a_large.png?v=1467828322',
       price: 9,
       quantity: 10
+    },
+    {
+      name: 'Soylent',
+      img: 'https://cdn.discourse.org/soylent/uploads/default/original/2X/3/3862bca1dcff9cd666e9294ec97fad84808016d7.jpg',
+      price: 6,
+      quantity: 10
     }
+
 ];
 
 Product.remove({})
