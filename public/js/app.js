@@ -64,14 +64,6 @@ function UsersController($http, $state, $scope, $rootScope){
     })
   }
 
-//checkout function leading to checkout.html
-  // function checkout(currentUser) {
-  //   $http.get(`/users/${currentUser._id}/checkout`)
-  //   .then(function(response){
-  //   })
-  // }
-  //
-
   //sends login credentials to backend in order to verify correct email and pass entered
 
   function login(currentUser){
