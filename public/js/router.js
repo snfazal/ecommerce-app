@@ -27,5 +27,9 @@ function StoreRouter($stateProvider, $urlRouterProvider){
     url:'/users/:userId/cart',
     templateUrl: '/partials/cart/current.html'
   })
+  .state('checkout', {
+    url:'/checkout',
+    templateUrl: '/partials/cart/checkout.html'
+  })
 
 }

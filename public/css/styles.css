@@ -107,13 +107,14 @@ button {
   border-radius: 3px;
 }
 
-.total_price {
+.checkout {
   width: 90%;
   margin: 25px auto;
 }
 
-.total_price > * {
+.checkout > * {
   float: right;
+  margin: 0 25px;
 }
 
 .cart_product > div {
