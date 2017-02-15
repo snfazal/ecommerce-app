@@ -1,5 +1,5 @@
 <div ng-controller="UsersController as users">
-  <form ng-submit="users.signup(userPass)">
+  <form ng-submit="users.signup(userPass)" class="signup">
     <div>
       <label for="username">Username</label>
       <input type="text" ng-model="userPass.username">
@@ -12,6 +12,7 @@
       <label for="password">Password</label>
       <input type="password" ng-model="userPass.password">
     </div>
+    <br>
       <button type="submit">Signup!</button>
   </form>
 </div>
