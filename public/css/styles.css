@@ -98,16 +98,21 @@ button {
   width: 90%;
   overflow: auto;
   margin: 10px auto;
-  display: block;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
   border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.cart_product div:first-of-type {
-  float: left;
+.cart_product > div {
+  margin: 5px;
+  flex: 3 0px;
 }
 
 .cart_product div:last-of-type {
-  float: right;
   display: flex;
   flex-flow: column;
 }
@@ -120,6 +125,7 @@ button {
 .cart_product div:last-of-type > div > * {
   margin: 5px;
   width: 75px;
+  flex: 2 0px;
 }
 
 /*start of login form*/
