@@ -7,12 +7,17 @@
 }
 
 #navbar {
-  background: papayawhip;
+  background-color: papayawhip;
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
   font-family: sans-serif;
+
 }
 
 #logo {
@@ -20,11 +25,12 @@
   flex-flow: row;
   align-items: center;
   cursor: pointer;
+  font-size: 20px;
 }
 
 #logo img{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
 }
 
@@ -34,6 +40,7 @@
   width: auto;
   flex-flow: row;
   list-style: none;
+  font-size: 20px;
 }
 
 #navlinks li {
@@ -46,6 +53,7 @@
   flex-flow: row wrap;
   justify-content: space-around;
   font-family: sans-serif;
+  margin-top: 75px;
 }
 
 .product {
