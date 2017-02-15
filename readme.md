@@ -1,7 +1,13 @@
-# What is nerd-crunch?
-  E-Commerce store that sells prime products to fuel programmers around the globe. 
+
+# What is it nerd-crunch?
+
+An eCommerce application to sell prime products that fuel programmers around the globe.
+
 
 ### What does it do?
+
+nerd-crunch lets users buy custom products that aid in their belief to fuel their bodies while fueling their minds everyday. We let users buy simple products while making it easy to add items to their cart, edit their carts and make purchases when they need them most.
+
 **navbar visible from all pages**
 
   - link to cart
@@ -56,6 +62,18 @@
 ### Are you thinking of using any API’s?
   Paypal? Amazon? Etsy?
 
+#Technologies Used
+
+nerd-crunch is built using Javascrip, MongoDB, Express, Angular.js, and Node.js. This full CRUD MEAN stack application is structured with RESTful routes.
+
+#Approach Taken
+
+At first we started by taking into consideration the best way to utilize the features of an application that could create, read, update and destroy. eCommerce platforms are a complex way to monetize full CRUD applications, they're fun and interesting too.
+
+Once we had our base model, we worked around the details by creating wireframes of our ideal eCommerce app. Wireframes turned into user stories as we found ourselves inside the mindset of a user. Using GitHub we were able to create user stories, identify technologies and even divide [tasks](https://github.com/snfazal/ecommerce-app/issues).
+
+Choosing to focus on tasks we were weaker in handling helped push us through the project. So the execution of some features took pair-programming, precise scheduling, and lots of communication in order to get to production.
+
 # Entity Relationship Diagram (ERD)
 ### User
 ```
@@ -101,3 +119,17 @@
 [Seller Page](https://wireframe.cc/pro/pp/f063f370365314)
 
 [Product Show Page](https://wireframe.cc/pro/edit/65514)
+
+#Reach Goals
+
+- be able to favorite items and have them save for review or purchase in the future
+- be able to view items for sale by their category
+- let users review products and give feedback to the seller
+- let users search for items via a tool bar
+- let users save previous purchases to reference
+- clear out the cart after checkout
+
+#Unsolved Bugs
+
+
+#Final Thoughts

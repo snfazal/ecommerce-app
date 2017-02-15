@@ -1,8 +1,20 @@
-<h3> {{home.currentUser.name}} git you items here:  </h3>
+<div ng-controller="CartsController as cart">
 
-<ul>
-  <li ng-repeat='product in home.currentUser.cart'>
-  {{products.product.name}}
-  {{products.quantity}}
-  </li>
-</ul>
+  <h2> {{home.currentUser.username}} Confirm your items here:  </h2>
+  <div ng-repeat='product in home.currentUser.cart' class="cart_product checkout_page">
+    <div>
+      <h3>{{product.product.name}}</h3>
+    </div>
+    <div>
+      <h3>{{product.product.price | currency}}</h3>
+    </div>
+    <div>
+      <h3>Quantity: {{product.quantity}}</h3>
+    </div>
+  </div>
+  <div class="checkout">
+    <button ng-click="cart.checkout(home.currentUser)">Checkout</button>
+    <h3>Total Price: {{home.currentUser.cart.totalPrice | currency}}</h3>
+  </div>
+
+</div>
