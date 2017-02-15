@@ -53,18 +53,6 @@ function UsersController($http, $state, $scope, $rootScope){
   }
 
 
-
-  //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
-
-  function cart(currentUser) {
-    $http.get(`/users/${currentUser._id}/cart`)
-    .then(function(response){
-      $scope.$emit('updateCart', response.data.cart);
-      $state.go('cart', {userId: currentUser._id})
-    })
-  }
-
-
   //sends login credentials to backend in order to verify correct email and pass entered
 
   function login(currentUser){
@@ -90,7 +78,6 @@ function UsersController($http, $state, $scope, $rootScope){
   self.signup = signup;
   self.login = login;
   self.profile = profile;
-  self.cart = cart
 }
 
 
@@ -121,7 +108,9 @@ function CartsController($scope, $http, $state, $rootScope){
     $http
     .post(`/users/${currentUser._id}/cart/${product._id}/add`, {userId: currentUser._id, quantity: self.quantityToBuy})
     .then(function(response){
-      console.log('add to cart route ', response)
+      self.cart = response.data.cart;
+      findTotal();
+      $scope.$emit('updateCart', self.cart);
     })
   }
 
@@ -129,7 +118,9 @@ function CartsController($scope, $http, $state, $rootScope){
   function removeFromCart(product, currentUser){
     $http.delete(`users/${currentUser._id}/cart/${product._id}/delete`)
     .then(function(response){
-      $scope.$emit('updateCart', response.data.cart);
+      self.cart = response.data.cart;
+      findTotal();
+      $scope.$emit('updateCart', self.cart);
       $state.go('cart', {userId: currentUser._id})
     })
   }
@@ -138,13 +129,48 @@ function CartsController($scope, $http, $state, $rootScope){
   function updateQuantity(product, currentUser){
     $http.patch(`users/${currentUser._id}/cart/${product._id}`, {quantityToBuy: self.quantityToBuy})
     .then(function(response){
-      $scope.$emit('updateCart', response.data.cart);
+      self.cart = response.data.cart;
+      findTotal();
+      $scope.$emit('updateCart', self.cart);
       $state.go('cart', {userId: currentUser._id})
     })
   }
 
+  //sums the subtotals (item price * item quantity) for each item and attaches variable to self.cart
+
+  function findTotal(){
+    var cart = self.cart;
+    var subtotal = 0
+    cart.forEach(function(product){
+      subtotal += (product.product.price * product.quantity)
+    })
+    self.cart.totalPrice = subtotal
+  }
+
+  //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
+
+  function getCart(currentUser) {
+    $http.get(`/users/${currentUser._id}/cart`)
+    .then(function(response){
+      self.cart = response.data.cart;
+      findTotal();
+      $scope.$emit('updateCart', self.cart);
+      $state.go('cart', {userId: currentUser._id})
+    })
+  }
+
+  //clears cart contents and directs to thankyou page
+  function checkout(currentUser) {
+    $http.delete(`/users/${currentUser._id}/cart`)
+    .then(function(response){
+      $state.go('thank_you')
+    })
+  }
 
   self.addToCart = addToCart;
   self.removeFromCart = removeFromCart;
   self.updateQuantity = updateQuantity;
+  self.findTotal = findTotal;
+  self.getCart = getCart;
+  self.checkout = checkout;
 }

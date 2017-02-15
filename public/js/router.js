@@ -19,13 +19,21 @@ function StoreRouter($stateProvider, $urlRouterProvider){
     url: '/users/login',
     templateUrl: '/partials/users/login.html'
   })
-  .state('profile', {
-    url:'/users/:userId',
-    templateUrl: '/partials/users/profile.html'
-  })
   .state('cart', {
     url:'/users/:userId/cart',
     templateUrl: '/partials/cart/current.html'
+  })
+  .state('checkout', {
+    url:'/users/checkout',
+    templateUrl: '/partials/cart/checkout.html'
+  })
+  .state('thank_you', {
+    url:'/thank_you',
+    templateUrl: '/partials/cart/thank_you.html'
+  })
+  .state('profile', {
+    url:'/users/:userId',
+    templateUrl: '/partials/users/profile.html'
   })
 
 }
