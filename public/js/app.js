@@ -53,7 +53,7 @@ function UsersController($http, $state, $scope, $rootScope){
   }
 
 
-<<<<<<< HEAD
+
 
   //Gets the products currently stored in the currentUser's cart and sends them to HomeController in order to update currentUser
 
@@ -65,8 +65,6 @@ function UsersController($http, $state, $scope, $rootScope){
     })
   }
 
-=======
->>>>>>> dev
   //sends login credentials to backend in order to verify correct email and pass entered
 
   function login(currentUser){
