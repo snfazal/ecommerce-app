@@ -11,8 +11,7 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
 **navbar visible from all pages**
 
   - link to cart
-  - link to user profile
-  - link to homepage
+  - link to homepage (logo)
   - link to sign in page
 
 1. **Homepage**
@@ -20,37 +19,23 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
     - main product picture
     - link to add to cart
     - basic info - price, name, in stock/out of stock
-    - clicking product links to product details page
-  - search bar to search for products
-
-2. **Products details page**
-  - link to add to cart (with dropdown or field to enter quantity > 1)
-  - quantity in stock, price
-  - additional pictures
-  - feedbacks/comments/questions...
-  - ability to post new feedback
 
 3. **Login page** - When user attempts to checkout or access user page and are not logged in, redirect here
-  - if items in cart (from when they weren't logged in), items will be added to their cart
   - link to signup page for new users
   - login form
 
 4. **Signup page**
   - signup form
+    - username or email
+    - password
 
 5. **Profile page**
-  - link to edit form for user
-  - link to past purchases
-  - personal info (address, shipping payment preferences etc)
-
-6. **User edit page**
-  - can edit login info (username, password)
-  - can edit personal info (address, shipping payment preferences etc)
+  - link to add additional email address in order to better contact customer for purchase delivery
 
 7. **Cart page**
   - change quantity for items in cart
-  - remove items from cart
-  - link to checkout
+  - removes all items from cart
+  - link to checkout and
 
 8. **Checkout page**
   - totals price + tax
@@ -60,7 +45,7 @@ nerd-crunch lets users buy custom products that aid in their belief to fuel thei
   Purchases made simple
 
 ### Are you thinking of using any API’s?
-  Paypal? Amazon? Etsy?
+  Paypal? Amazon? Etsy? Maybe?
 
 #Technologies Used
 
@@ -125,11 +110,12 @@ Choosing to focus on tasks we were weaker in handling helped push us through the
 - be able to favorite items and have them save for review or purchase in the future
 - be able to view items for sale by their category
 - let users review products and give feedback to the seller
-- let users search for items via a tool bar
+- let users search for items via a search bar
 - let users save previous purchases to reference
-- clear out the cart after checkout
+- let users modify their user profiles
 
 #Unsolved Bugs
+
 
 
 #Final Thoughts
