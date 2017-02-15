@@ -7,12 +7,17 @@
 }
 
 #navbar {
-  background: papayawhip;
+  background-color: papayawhip;
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
   font-family: sans-serif;
+
 }
 
 #logo {
@@ -20,11 +25,12 @@
   flex-flow: row;
   align-items: center;
   cursor: pointer;
+  font-size: 20px;
 }
 
 #logo img{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin: 10px;
 }
 
@@ -34,6 +40,7 @@
   width: auto;
   flex-flow: row;
   list-style: none;
+  font-size: 20px;
 }
 
 #navlinks li {
@@ -46,6 +53,7 @@
   flex-flow: row wrap;
   justify-content: space-around;
   font-family: sans-serif;
+  margin-top: 75px;
 }
 
 .product {
@@ -128,7 +136,25 @@ button {
   flex: 2 0px;
 }
 
+.checkout {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.checkout > * {
+  float: right;
+  margin: 0 25px;
+}
+
+.checkout_page > div {
+  flex: none;
+}
+/*end of cart*/
 /*start of login form*/
+.login label {
+  display: inline-block;
+  width: 100px;
+}
 .login {
   text-align: center;
   font-family: sans-serif;
@@ -144,6 +170,8 @@ button {
   list-style: none;
   font-family: sans-serif;
   font-size: 1.2em;
+  text-decoration: underline;
+  color: blue;
 }
 /*end login form*/
 /*start of signup form*/
@@ -159,6 +187,7 @@ button {
 }
 /*end of signup form*/
 
+
 @media (max-width: 400px) {
   .product {
     width: 270px;
@@ -171,4 +200,4 @@ button {
     border: 1px solid #ccc;
     border-radius: 3px;
   }
->>>>>>> 3bf8b1fb412306f06ad4700c1f3938af5bd5999d
+
