@@ -187,6 +187,11 @@ button {
 }
 /*end of signup form*/
 
+.profilepage {
+  text-align: center;
+  font-family: sans-serif;
+}
+
 
 @media (max-width: 400px) {
   .product {
