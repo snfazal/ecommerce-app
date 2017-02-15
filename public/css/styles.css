@@ -157,7 +157,11 @@ button {
   text-align: center;
   font-family: sans-serif;
   font-size: 1.2em;
-
+  text-transform: capitalize;
+}
+.login label {
+  display: inline-block;
+  width: 100px;
 }
 .signup_ref {
   text-align: center;
@@ -175,17 +179,13 @@ button {
   font-size: 1.2em;
   text-transform: capitalize;
   margin-top: 100px;
+
 }
 .signup label {
   display: inline-block;
   width: 100px;
 }
 /*end of signup form*/
-/*beginning of product page*/
-  .profilepage {
-    text-align: center;
-    font-family: sans-serif;
-  }
 
 
 @media (max-width: 400px) {
