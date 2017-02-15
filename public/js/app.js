@@ -136,6 +136,8 @@ function CartsController($scope, $http, $state, $rootScope){
     })
   }
 
+  //sums the subtotals (item price * item quantity) for each item and attaches variable to self.cart
+
   function findTotal(){
     var cart = self.cart;
     var subtotal = 0
@@ -157,9 +159,18 @@ function CartsController($scope, $http, $state, $rootScope){
     })
   }
 
+  //clears cart contents and directs to thankyou page
+  function checkout(currentUser) {
+    $http.delete(`/users/${currentUser._id}/cart`)
+    .then(function(response){
+      $state.go('thank_you')
+    })
+  }
+
   self.addToCart = addToCart;
   self.removeFromCart = removeFromCart;
   self.updateQuantity = updateQuantity;
   self.findTotal = findTotal;
   self.getCart = getCart;
+  self.checkout = checkout;
 }

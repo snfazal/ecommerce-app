@@ -17,7 +17,6 @@ router.post('/:productId/add', function(req, res){
 
     .exec(function(err, user){
       user.cart.forEach(function(item) {
-        console.log(item.product.id == req.params.productId)
         if(item.product.id == req.params.productId){
           matchedProduct = item;
           previousQuantity = item.quantity
@@ -74,6 +73,21 @@ router.delete('/:productId/delete', function(req, res){
     if(err) console.log(err);
     var product = user.cart.id(req.params.productId)
       product.remove();
+    user.save();
+    res.json({cart: user.cart})
+  })
+})
+
+//clears users cart
+router.delete('/', function(req, res){
+  User.findById(req.session.currentUser._id)
+  .exec(function(err, user){
+    if(err) console.log(err)
+
+    for(var i = 0; i < user.cart.length; i++){
+      user.cart[i].remove();
+      i--;
+    }
     user.save();
     res.json({cart: user.cart})
   })

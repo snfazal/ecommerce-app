@@ -107,16 +107,6 @@ button {
   border-radius: 3px;
 }
 
-.checkout {
-  width: 90%;
-  margin: 25px auto;
-}
-
-.checkout > * {
-  float: right;
-  margin: 0 25px;
-}
-
 .cart_product > div {
   margin: 5px;
   flex: 3 0px;
@@ -138,6 +128,20 @@ button {
   flex: 2 0px;
 }
 
+.checkout {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.checkout > * {
+  float: right;
+  margin: 0 25px;
+}
+
+.checkout_page > div {
+  flex: none;
+}
+/*end of cart*/
 /*start of login form*/
 .login label {
   display: inline-block;
