@@ -136,4 +136,28 @@ button {
   text-align: center;
   font-family: sans-serif;
   font-size: 1.2em;
+  text-transform: capitalize;
 }
+.signup label {
+  display: inline-block;
+  width: 100px;
+}
+/*end of signup form*/
+
+@media (max-width: 400px) {
+  .product {
+    width: 270px;
+    margin: 25px 25px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 0 30px #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+/*beginning of product page*/
+  .profilepage {
+    text-align: center;
+    font-family: sans-serif;
+  }
