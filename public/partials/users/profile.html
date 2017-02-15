@@ -1,17 +1,20 @@
-<!-- renders currenUser's profile page -->
-<div ng-controller="ProductsController as products">
-  <h1>{{home.currentUser.username}} Profile</h1>
-  <h3>Email: {{home.currentUser.email}}</h3>
-
-
-</div>
-
 
 
 <!-- renders currenUser's profile page -->
 <div ng-controller="ProductsController as products">
-  <h1>{{home.currentUser.username}} Profile</h1>
-  <h3>Email: {{home.currentUser.email}}</h3>
+  <h1>Welcome {{home.currentUser.username}} to your page</h1>
 
+  <h2>You can edit your information below</h2>
+  <br>
+  <h3>Email: {{home.currentUser.email}}</h3>
+  <br>
 
 </div>
+
+  <form ng-submit="users.profile(userPass)" class="profilepage">
+    <div>
+      <p>Submit another email address below</p> <br>
+        <input ng-model="userPass.editProfile" type="text" placeholder="{{userPass.email}}">
+      <button ng-click "userPass.addAddress(users, home.currentUser)">add</button>
+    </div>
+  </form>
