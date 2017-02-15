@@ -119,3 +119,5 @@ Choosing to focus on tasks we were weaker in handling helped push us through the
 
 
 #Final Thoughts
+
+This project really helped us visualize what it takes to monetize an application for end users. There were several battles we faced through the planning period that helped us get through the development process. One of the main battles was the checkout cart and how we wanted the checkout to work specifically for ease of purchase. 
