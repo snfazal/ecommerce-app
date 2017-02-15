@@ -18,7 +18,7 @@
           <img ng-src="https://img.clipartfox.com/2c52beffd0d853a65dee5af19a420a81_a-trybeforeyoubuy-franchise-clipart-store_300-300.png">
           <p style="display: inline-block">Home</p>
         </div>
-        <ul id="navlinks">
+        <ul id="navlinks" ng-controller="CartsController as cart">
 
         <!-- if user is logged out, show login button on nav -->
 
@@ -26,7 +26,7 @@
 
         <!-- if user is logged in show cart, profile and logout buttons on nav bar -->
 
-          <li ng-if="home.currentUser"  ng-click="users.cart(home.currentUser)">Cart</li>
+          <li ng-if="home.currentUser"  ng-click="cart.getCart(home.currentUser)">Cart</li>
 
           <li ng-if="home.currentUser"  ng-click="users.profile(home.currentUser)">Profile</li>
 

@@ -38,9 +38,8 @@ router.post('/:productId/add', function(req, res){
 
       .exec(function(err, success){
         if(err) console.log(err);
-        res.json({success, message: `Added ${product.name} successfully`})
+        res.json({cart: user.cart})
       });
-      console.log('no match')
     })
   });
 });
