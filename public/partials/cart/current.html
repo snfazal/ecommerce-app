@@ -7,6 +7,9 @@
       <h3>{{product.product.name}}</h3>
     </div>
     <div>
+      <h3>{{product.product.price | currency}}</h3>
+    </div>
+    <div>
       <div>
         <p>Quantity: {{product.quantity}}</p>
         <button ng-click="cart.removeFromCart(product, home.currentUser)">Remove</button>
