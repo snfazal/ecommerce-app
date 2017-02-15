@@ -59,6 +59,12 @@ var products = [{
       img: 'https://cdn.discourse.org/soylent/uploads/default/original/2X/3/3862bca1dcff9cd666e9294ec97fad84808016d7.jpg',
       price: 6,
       quantity: 10
+    },
+    {
+      name: 'Pocket Dev',
+      img: 'http://www.kotywong.com/images/koty.jpg',
+      price: 3,
+      quantity: 1
     }
 
 ];
