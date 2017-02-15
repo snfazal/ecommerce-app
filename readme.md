@@ -1,6 +1,8 @@
+
 # What is it nerd-crunch?
 
 An eCommerce application to sell prime products that fuel programmers around the globe.
+
 
 ### What does it do?
 
@@ -130,4 +132,4 @@ Choosing to focus on tasks we were weaker in handling helped push us through the
 #Unsolved Bugs
 
 
-#Final Thoughts 
+#Final Thoughts
